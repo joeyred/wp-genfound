@@ -34,7 +34,7 @@ function genfound_is_minified( $dir_path, $file_name, $extension ) {
  * @param  string  $dir_path  Relative path to directory file is located in.
  * @param  string  $file_name Name of the file without its extension.
  *
- * REQUIRED ONLY FOR STYLE
+ * REQUIRED ONLY FOR SCRIPTS
  * @param  array   $deps      Array of the handles of all the registered scripts that this script depends on, that is the scripts that must be loaded before this script.
  * @param  string  $ver       String specifying the script version number, if it has one, which is concatenated to the end of the path as a query string.
  * @param  boolean $in_footer If 'true' then the script is placed before the closing </body> tag.
