@@ -1,15 +1,12 @@
-var gulp     	= require('gulp')
-,	browserSync = require('browser-sync').create()
-,	plugin		= require('gulp-load-plugins')()
-,	sequence 	= require('run-sequence')
-,	del 		= require('del')
-;
-
-plugin({
+var plugin      = require('gulp-load-plugins')({
   rename: {
-    'merge-media-queries': 'mmq'
+    'gulp-merge-media-queries': 'mmq'
   }
 });
+var gulp     	= require('gulp');
+var	browserSync = require('browser-sync').create();
+var	sequence 	= require('run-sequence');
+var	del 		= require('del');
 
 /*
 CONFIG
@@ -63,7 +60,7 @@ var PATH = {
 gulp.task('browserSync', function() {
 	 browserSync.init({ 
         proxy: "wordpress-themes.dev"
-    ,	notify: false // boolean value, Toggle notifications of bsync activity
+    ,	notify: true // boolean value, Toggle notifications of bsync activity
     ,	open: false // toggle auotmatic opening of webpage upong bsync starting
     
     });
@@ -80,8 +77,8 @@ gulp.task('clean', function() {
 
 /* Compile SCSS */
 gulp.task('compileSass', function() {
-	return gulp.src('scss/app.scss')
-		.pipe(plugin.maps.init())
+	return gulp.src('assets/scss/app.scss')
+		.pipe(plugin.sourcemaps.init())
 		.pipe(plugin.sass({
 			includePaths: PATH.sass
 		})
@@ -93,7 +90,7 @@ gulp.task('compileSass', function() {
 		.pipe(plugin.autoprefixer({
 			browsers: COMPATIBILITY
 		}))
-		.pipe(plugin.maps.write('./'))
+		.pipe(plugin.sourcemaps.write('./'))
 		.pipe(gulp.dest('css'))
 		.pipe(browserSync.stream({ // Inject Styles
 			match: '**/*.css' // Force source map exclusion *This fixes reloading issue on each file change*
@@ -102,24 +99,23 @@ gulp.task('compileSass', function() {
 
 /* Concatinate Main JS Files */
 gulp.task('concatScripts', function() {
-	return gulp.src(mainScripts)
-	.pipe(plugin.maps.init()) 
-	.pipe(concat('app.js')) 
-	.pipe(plugin.maps.write('./')) 
+	return gulp.src(PATH.javascript)
+	.pipe(plugin.sourcemaps.init()) 
+	.pipe(plugin.concat('app.js')) 
+	.pipe(plugin.sourcemaps.write('./')) 
 	.pipe(gulp.dest('js')); 
 });
 
 /* Watch Task */
 gulp.task('watch', ['browserSync'], function() {
 	gulp.watch('assets/scss/**/*.scss', ['compileSass']);
-	gulp.watch('**/*.php').on('change', browserSync.reload);
-	gulp.watch('foundation/php/**/*.php').on('change', browserSync.reload);  
+	gulp.watch('**/*.php').on('change', browserSync.reload); 
 	gulp.watch('assets/js/**/*.js', ['concatScripts']).on('change', browserSync.reload); 
 });
 
 gulp.task('dev', function(cb) {
 	sequence(
-		'clean'
+		'clean',
 		'compileSass',
 		'concatScripts',
 		cb
