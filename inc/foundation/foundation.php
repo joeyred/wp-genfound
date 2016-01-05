@@ -7,13 +7,13 @@
  */
 
 // Navigation Markup 
-// require( get_stylesheet_directory() . '/foundation/inc/navigation.php' );
+// require( get_stylesheet_directory() . '/inc/foundation/inc/navigation.php' );
 
 // Grid Markup 
-require( get_stylesheet_directory() . '/foundation/inc/grid.php' );
+require( get_stylesheet_directory() . '/inc/foundation/inc/grid.php' );
 
 // Block Grid Markup 
-// require( get_stylesheet_directory() . '/foundation/inc/block-grid.php' );
+// require( get_stylesheet_directory() . '/inc/foundation/inc/block-grid.php' );
 
 // Comments Markup
-// require( get_stylesheet_directory() . '/foundation/inc/forms.php' );
+// require( get_stylesheet_directory() . '/inc/foundation/inc/forms.php' );
