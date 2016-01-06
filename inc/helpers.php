@@ -6,6 +6,22 @@
  */
 
 /**
+ * Get file extension
+ *
+ * @param  string $path filepath to image.
+ *
+ * @return string       file extension
+ */
+function genfound_get_extension( $path ) {
+
+	$file_info = pathinfo( $path );
+
+	$ext = $file_info['extension'];
+
+	return $ext;
+}
+
+/**
  * Check if File is Minified
  *
  * @param  string $dir_path  relative path to directory file is located in.
