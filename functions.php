@@ -31,10 +31,10 @@ function genfound_styles_scripts() {
 	genfound_enqueue( 'main_js', 'js/app.js', array('jquery'), '', true );
 }
 
-add_action('genesis_before_header', 'genfound_debug' );
-function genfound_debug() {
+// add_action('genesis_before_header', 'genfound_debug' );
+// function genfound_debug() {
 
-	$debug = genfound_file_is_minified( 'css/app.css' );
+// 	$debug = genfound_file_is_minified( 'css/app.css' );
 
-	echo $debug;
-}
+// 	echo $debug;
+// }
