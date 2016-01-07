@@ -24,9 +24,17 @@ add_theme_support( 'genesis-responsive-viewport' );
 add_action('wp_enqueue_scripts', 'genfound_styles_scripts');
 function genfound_styles_scripts() {
 	// Styles
-	genfound_enqueue( 'style', 'main-stylesheet', 'css', 'app' );
+	genfound_enqueue( 'main-stylesheet', 'css/app.css' );
 	wp_enqueue_style( 'dashicons' );
 
 	// Scripts
-	genfound_enqueue( 'script', 'main_js', 'js', 'app', array('jquery'), '', true );
+	genfound_enqueue( 'main_js', 'js/app.js', array('jquery'), '', true );
+}
+
+add_action('genesis_before_header', 'genfound_debug' );
+function genfound_debug() {
+
+	$debug = genfound_file_is_minified( 'css/app.css' );
+
+	echo $debug;
 }
