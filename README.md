@@ -18,29 +18,28 @@ This function also automatically detects if you are trying to enqueue a script o
 #### Enqueueing Scripts
 
 Using WordPress core function
+
 ```php	
 wp_enqueue_script( 'main-javascript', get_stylesheet_directory_uri() . '/js/app.js', array('jquery'), '', true );
 ```
 
 Using GenFound enqueueing function
+
 ```php
-<?php
 genfound_enqueue( 'main-javascript', 'js/app.js', array('jquery'), '', true );
 ```
 
 #### Enqueueing Styles
 
 Using WordPress core function
-```php
 
-	<?php
-	wp_enqueue_style( 'main-stylesheet', get_stylesheet_directory_uri() . '/css/app.css' );
+```php
+wp_enqueue_style( 'main-stylesheet', get_stylesheet_directory_uri() . '/css/app.css' );
 ```
 Using GenFound enqueueing function
-```php
 
-	<?php
-	genfound_enqueue( 'main-stylesheet', 'css/app.css' );
+```php
+genfound_enqueue( 'main-stylesheet', 'css/app.css' );
 ```
 
 
