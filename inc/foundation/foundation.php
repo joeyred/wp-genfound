@@ -21,7 +21,7 @@ include_once( get_stylesheet_directory() . '/inc/foundation/inc/grid.php' );
 add_filter('post_class','remove_sticky_class');
 // Fix .sticky Class Conflict Between WordPress and Foundation
 function remove_sticky_class( $classes ) {
-  $classes = array_diff($classes, array("sticky"));
+  $classes = array_diff($classes, array('sticky'));
   $classes[] = 'wordpress-sticky';
   return $classes;
 }
