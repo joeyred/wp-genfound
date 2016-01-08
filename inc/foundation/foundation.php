@@ -6,14 +6,23 @@
  * @package GenFound
  */
 
-// Navigation Markup 
-// require( get_stylesheet_directory() . '/inc/foundation/inc/navigation.php' );
+// Navigation Markup
+include_once( get_stylesheet_directory() . '/inc/foundation/inc/navigation.php' );
 
-// Grid Markup 
-require( get_stylesheet_directory() . '/inc/foundation/inc/grid.php' );
+// Grid Markup
+include_once( get_stylesheet_directory() . '/inc/foundation/inc/grid.php' );
 
-// Block Grid Markup 
+// Block Grid Markup
 // require( get_stylesheet_directory() . '/inc/foundation/inc/block-grid.php' );
 
 // Comments Markup
 // require( get_stylesheet_directory() . '/inc/foundation/inc/forms.php' );
+
+add_filter('post_class','remove_sticky_class');
+// Fix .sticky Class Conflict Between WordPress and Foundation
+function remove_sticky_class( $classes ) {
+  $classes = array_diff($classes, array("sticky"));
+  $classes[] = 'wordpress-sticky';
+  return $classes;
+}
+
