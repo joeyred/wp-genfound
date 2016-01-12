@@ -6,16 +6,15 @@
  * @package GenFound
  */
 
-// Navigation Markup
-include_once( get_stylesheet_directory() . '/inc/foundation/inc/navigation.php' );
-
 // Config
-include_once( get_stylesheet_directory() . '/inc/foundation/inc/config-init.php' );
+include_once( get_stylesheet_directory() . '/inc/foundation/functions/config-init.php' );
 
-// Grid Markup 
-include_once( get_stylesheet_directory() . '/inc/foundation/inc/markup.php' );
-// include_once( get_stylesheet_directory() . '/inc/foundation/inc/markup/markup-actions.php' );
+// Markup
+include_once( get_stylesheet_directory() . '/inc/foundation/functions/markup.php' );
 
+// Navigation
+include_once( get_stylesheet_directory() . '/inc/foundation/functions/menu-walkers.php' );
+include_once( get_stylesheet_directory() . '/inc/foundation/structure/navigation.php' );
 
 add_filter('post_class','remove_sticky_class');
 // Fix .sticky Class Conflict Between WordPress and Foundation

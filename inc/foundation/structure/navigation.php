@@ -5,10 +5,6 @@
  * @package GenFound
  */
 
-include_once( get_stylesheet_directory() . '/inc/foundation/inc/navigation/menu-walkers.php' );
-
-include_once( get_stylesheet_directory() . '/inc/foundation/inc/navigation/responsive-navigation.php' );
-
 // Remove Genesis Menus
 remove_theme_support( 'genesis-menus' );
 
