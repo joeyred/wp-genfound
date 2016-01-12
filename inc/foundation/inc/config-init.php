@@ -45,3 +45,5 @@ function genfound_markup_config( $section, $element ) {
 
 	return ' ' . $output;
 }
+
+
