@@ -9,14 +9,13 @@
 // Navigation Markup
 include_once( get_stylesheet_directory() . '/inc/foundation/inc/navigation.php' );
 
-// Grid Markup
-include_once( get_stylesheet_directory() . '/inc/foundation/inc/grid.php' );
+// Config
+include_once( get_stylesheet_directory() . '/inc/foundation/inc/config-init.php' );
 
-// Block Grid Markup
-// require( get_stylesheet_directory() . '/inc/foundation/inc/block-grid.php' );
+// Grid Markup 
+include_once( get_stylesheet_directory() . '/inc/foundation/inc/markup.php' );
+// include_once( get_stylesheet_directory() . '/inc/foundation/inc/markup/markup-actions.php' );
 
-// Comments Markup
-// require( get_stylesheet_directory() . '/inc/foundation/inc/forms.php' );
 
 add_filter('post_class','remove_sticky_class');
 // Fix .sticky Class Conflict Between WordPress and Foundation
