@@ -37,7 +37,7 @@ function genfound_grid_config_settings() {
 			'content-sidebar-wrap' => 'row',
 			'content' 			   => 'large-7 large-push-5 columns',
 			'sidebar-primary' 	   => 'large-3 large-pull-7 columns',
-			'sidebar-secondary'	   => 'large-2 large-pull-10 columns'
+			'sidebar-secondary'	   => 'large-2 large-pull-7 columns'
 		),
 		'sidebar-content-sidebar' => array(
 			'content-sidebar-wrap' => 'row',
