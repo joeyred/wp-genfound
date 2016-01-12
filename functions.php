@@ -20,6 +20,11 @@ add_theme_support( 'html5' );
 // Add viewport meta tag for mobile browsers
 add_theme_support( 'genesis-responsive-viewport' );
 
+add_theme_support( 'genesis-structural-wraps', array( 'header' ) );
+
+// Add Support for Flex Box Grid
+// add_theme_support( 'genfound-flex-grid' );
+
 // Enqueue Styles and Scripts
 add_action('wp_enqueue_scripts', 'genfound_styles_scripts');
 function genfound_styles_scripts() {
@@ -31,10 +36,10 @@ function genfound_styles_scripts() {
 	genfound_enqueue( 'main_js', 'js/app.js', array('jquery'), '', true );
 }
 
-// add_action('genesis_before_header', 'genfound_debug' );
-// function genfound_debug() {
+add_action('genesis_before_header', 'genfound_debug' );
+function genfound_debug() {
 
-// 	$debug = genfound_file_is_minified( 'css/app.css' );
+	$debug = genfound_flex_grid_supported();
 
-// 	echo $debug;
-// }
+	echo $debug ? 'true' : 'false';
+}
