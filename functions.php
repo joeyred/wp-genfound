@@ -9,7 +9,7 @@
 include_once( get_template_directory() . '/lib/init.php' );
 
 // Foundation Integration Into Genesis
-include_once( get_stylesheet_directory() . '/inc/foundation/foundation.php' );
+include_once( get_stylesheet_directory() . '/inc/foundation/foundation-init.php' );
 
 // Helper functions
 include_once( get_stylesheet_directory() . '/inc/helpers.php' );
