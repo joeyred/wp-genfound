@@ -1,6 +1,10 @@
 # wp-genfound
 Foundation for Sites and the Genesis Framwork.
 
+## Gulp
+
+## Bower
+
 ## Flex Grid Support
 
 This theme uses the Foundation Float Grid component by default, however it is extremely easy to switch to the Flex Grid if you choose to use it. 
