@@ -7,7 +7,7 @@
  */
 
 // Config
-include_once( get_stylesheet_directory() . '/inc/foundation/functions/config-init.php' );
+include_once( get_stylesheet_directory() . '/inc/foundation/functions/config.php' );
 
 // Markup
 include_once( get_stylesheet_directory() . '/inc/foundation/functions/markup.php' );
