@@ -13,7 +13,8 @@ add_action( 'init', 'genfound_register_menus' );
 function genfound_register_menus() {
 	register_nav_menus( 
 		array(
-			'primary' => __( 'Primary Navigation' )
+			'primary' => __( 'Primary Navigation' ),
+			'test' 	  => __('Testing')
 		)
 	);
 }
@@ -35,12 +36,12 @@ function genfound_top_bar_nav() {
 function genfound_off_canvas_nav() {
 	 wp_nav_menu(array(
         'container' => false,                           // Remove nav container
-        'menu_class' => 'vertical menu',       			// Adding custom nav class
+        'menu_class' => 'menu vertical',       			// Adding custom nav class
         'items_wrap' => '<ul id="%1$s" class="%2$s" data-drilldown>%3$s</ul>',
         'theme_location' => 'primary',        			// Where it's located in the theme
         'depth' => 5,                                   // Limit the depth of the nav
         'fallback_cb' => false,                         // Fallback function
-        'walker' => new Off_Canvas_Menu_Walker()
+        'walker' => new Genfound_Menu_Walker()
     ));
 } /* End Off Canvas Menu */
 
@@ -57,6 +58,7 @@ function genfound_off_canvas_markup_open() {
     	<div class="off-canvas-wrapper-inner" data-off-canvas-wrapper>
 		    <div class="off-canvas position-left" id="offCanvas" data-off-canvas>
 		    	<?php genfound_off_canvas_nav(); ?>
+		    	<?php //genfound_nav_menu_builder(); ?>
 		    </div>
 
 		    <div class="off-canvas-content" data-off-canvas-content>
@@ -111,9 +113,6 @@ function genfound_off_canvas_title_bar() {
 	</div>
 	<?php
 }
-
-
-
 
 
 
