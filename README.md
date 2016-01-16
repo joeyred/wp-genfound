@@ -1,5 +1,6 @@
 # wp-genfound
-Foundation for Sites and the Genesis Framwork.
+
+Foundation for Sites 6 and the Genesis Framwork brought together in an easy to use starter theme.
 
 ## Gulp
 
