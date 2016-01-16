@@ -15,6 +15,7 @@ include_once( get_stylesheet_directory() . '/inc/foundation/functions/markup.php
 // Navigation
 include_once( get_stylesheet_directory() . '/inc/foundation/functions/menu-walkers.php' );
 include_once( get_stylesheet_directory() . '/inc/foundation/structure/navigation.php' );
+include_once( get_stylesheet_directory() . '/inc/foundation/functions/menu.php');
 
 add_filter('post_class','remove_sticky_class');
 // Fix .sticky Class Conflict Between WordPress and Foundation
