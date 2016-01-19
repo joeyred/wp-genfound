@@ -6,6 +6,14 @@ Foundation for Sites 6 and the Genesis Framwork brought together in an easy to u
 
 This starter theme is still a work in progress and has some major features left to be added as of yet. This also means that a lot of this theme's structure and files are liable to change a lot before version 1.0.0 is reached.
 
+## Features
+
+- Support for use of Flex or Float grid.
+- Gulp, Bower, Sass workflow.
+- Easy use of Foundation menu components.
+- Easy to use configuration of grid classes in Genesis markup.
+- Pretty cool enqueueing function that takes care of using minified files if they exist without having to edit the file names passed into the function. 
+
 ## Installation
 
 This theme currently uses Gulp and Bower. 
