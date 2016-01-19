@@ -14,6 +14,13 @@
  * @link 	http://www.github.com/joeyred/wp-genfound
  */
 
+/**
+ * Check if theme supports flexbox grid
+ *
+ * @since  0.1.0
+ *
+ * @return boolean simple true or false value returned.
+ */
 function genfound_flex_grid_supported() {
 
 	if ( current_theme_supports( 'genfound-flex-grid' ) ) {
@@ -23,6 +30,13 @@ function genfound_flex_grid_supported() {
 	}
 }
 
+/**
+ * Checks which grid is currently supported and returns correct config file
+ *
+ * @since  0.1.0
+ *
+ * @return string grid configuration file name
+ */
 function genfound_get_grid() {
 
 	if ( genfound_flex_grid_supported() === true ) {
@@ -34,6 +48,16 @@ function genfound_get_grid() {
 	return $grid_file;
 }
 
+/**
+ * Takes in values that correspond to config settings array and returns a sting with
+ * the correct html class.
+ *
+ * @since  0.1.0
+ *
+ * @param  string $section the key value for the proper array within the `$classes` array.
+ * @param  string $element the element that is the name of the key in the section array.
+ * @return string          The HTML classes as pulled from the config.
+ */
 function genfound_markup_config( $section, $element ) {
 
 	// Include correct file path for currently supported grid

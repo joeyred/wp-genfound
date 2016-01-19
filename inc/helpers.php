@@ -2,22 +2,10 @@
 /**
  * Helper functions for various uses
  *
+ * @since  0.1.0
+ *
  * @package GenFound
  */
-// add_action('genesis_before_header', 'genfound_file_parse' );
-// function genfound_file_parse() {
-
-// 	$file_name = 'app.min.js';
-// 	$find = '.min';
-// 	$pos = strpos( $file_name, $find );
-
-// 	if ($pos === false) {
-// 	    echo "The string '$find' was not found in the string '$file_name'";
-// 	} else {
-// 	    echo "The string '$find' was found in the string '$file_name'";
-// 	    echo " and exists at position $pos";
-// 	}
-// }
 
 /**
  * Get file extension
