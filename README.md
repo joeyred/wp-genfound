@@ -111,7 +111,7 @@ The function, `genfound_menu_component()`, aims to easily utilize and impliment 
 This function has two values that must be passed, `$component` and `$theme_location`. Both values are passed as strings, with `$component` designating which Foundation menu component you wish to generate and `$theme_location` designating which registered menu location to use. The accepted values for `$component` are:
 
 - `'drilldown'`
-- `'accordian'`
+- `'accordion'`
 - `'dropdown'`
 
 ## Config Files
