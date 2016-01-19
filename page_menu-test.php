@@ -37,14 +37,18 @@ function genfound_menu_test_debug() {
 	// 	'walker' => new Genfound_Menu_Walker(),
 	// ));
 
-	genfound_menu_component( 'accordion' );
+	genfound_menu_component( 'accordion', 'test' );
+
+	genfound_menu_component( 'dropdown', 'test' );
 }
 
 add_action( 'genesis_after_entry', 'genfound_menu_test_debug_after');
 
 function genfound_menu_test_debug_after() {
 
-	genfound_menu_component( 'drilldown' );
+	genfound_menu_component( 'drilldown', 'test' );
+
+
 }
 
 genesis();
