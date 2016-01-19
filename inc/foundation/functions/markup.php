@@ -2,12 +2,10 @@
 /**
  * Main Markup File
  *
+ * @since  0.1.0
+ *
  * @package GenFound/Markup
  */
-
-function genfound_markup() {
-
-}
 
 add_action( 'genesis_before', 'genfound_header_markup' );
 /**
