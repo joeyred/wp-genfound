@@ -1,7 +1,20 @@
 # wp-genfound
-Foundation for Sites and the Genesis Framwork.
+
+Foundation for Sites 6 and the Genesis Framwork brought together in an easy to use starter theme.
+
+**Current Version:** 0.1.0
+
+This starter theme is still a work in progress and has some major features left to be added as of yet. This also means that a lot of this theme's structure and files are liable to change a lot before version 1.0.0 is reached.
+
+## Installation
+
+This theme currently uses Gulp and Bower. 
 
 ## Gulp
+
+The default gulp task builds all necessary files, starts Browsersync, and starts the watch tasks. To exit this just hit `control` + `c`. 
+
+**Note:** *This file is currently incomplete and set up for development only. This will be updated as the theme gets closer to version 1.0.0* 
 
 ## Bower
 
@@ -11,7 +24,7 @@ This theme uses the Foundation Float Grid component by default, however it is ex
 
 The new Flexbox Grid that foundation as added as a component to Foundation for Sites 6 uses much of the same classes as the Float Grid, however there are major differences in its useable features such as horizontal and vertical alignment, automatic sizing, and much easier source ordering. Because of this there has to be two seperate configuration files that determine the classes that are added to the Genesis markup, and so to use the Flex Grid, the Float Grid must be turned off.
 
-**Note:** *As of now there is no support for using both grids at the saem time. It's probably still possible to impliment both grids as the Foundation docs suggests, which is via scss mixins only, but that is completely untested here, and there are no plans to test this in the future. Considering the reason for using the float grid is mostly compatability with older browsers, I don't see a reason to mix the two.*
+**Note:** *As of now there is no support for using both grids at the same time. It's probably still possible to impliment both grids as the Foundation docs suggests, which is via scss mixins only, but that is completely untested here, and there are no plans to test this in the future. Considering the reason for using the float grid is mostly compatability with older browsers, I don't see a reason to mix the two.*
 
 ### Steps to using the Flex Grid
 
@@ -80,6 +93,18 @@ Using GenFound enqueueing function
 ```php
 genfound_enqueue( 'main-stylesheet', 'css/app.css' );
 ```
+
+## Menu Components
+
+Foundation 6 has redone how menus are handled. There are now menu components that can be housed in whatever wrapper or container you wish. This allows for a much more flexable way to create navigation menus.
+
+The function, `genfound_menu_component()`, aims to easily utilize and impliment these components.
+
+This function has two values that must be passed, `$component` and `$theme_location`. Both values are passed as strings, with `$component` designating which Foundation menu component you wish to generate and `$theme_location` designating which registered menu location to use. The accepted values for `$component` are:
+
+- `'drilldown'`
+- `'accordian'`
+- `'dropdown'`
 
 ## Config Files
 

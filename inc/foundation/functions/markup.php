@@ -34,7 +34,7 @@ function genfound_header_markup() {
 		function genfound_header_markup_close() {
 
 			genesis_markup( array(
-				'html5' => '</header></div>',
+				'html5' => '</div></header>',
 				'xhtml' => '</div></div>',
 			) );
 		}
