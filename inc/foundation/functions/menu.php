@@ -2,6 +2,8 @@
 /**
  * Functions for Building Foundation Menus
  *
+ * @since  0.1.0
+ *
  * @package GenFound/Markup
  */
 
@@ -13,6 +15,8 @@
  *  - `drilldown`,
  *  - `accordion`,
  *  - `dropdown`.
+ *
+ * @since  0.1.0
  *
  * @param  string $component      the name of the foundation component the function should build.
  * @param  string $theme_location registered theme menu to output.
@@ -67,16 +71,20 @@ function genfound_menu_component( $component, $theme_location ) {
 
 /**
  * Nav Menu Walker
+ *
+ * @since  0.1.0
  */
 class Genfound_Menu_Walker extends Walker_Nav_Menu {
 	/**
 	 * Submenu markup genorator
-	 * @param  string  $output original output of walker class fucntion.
+	 *
+	 * @param  string  $output  original output of walker class fucntion.
 	 * @param  integer $depth   determine how many submenus allowed in tree.
 	 * @param  array   $args    arguments from `wp_nav_menu( $args )`.
+	 *
 	 * @return void
 	 */
-	 function start_lvl(&$output, $depth = 0, $args = array() ) {
+	 function start_lvl( &$output, $depth = 0, $args = array() ) {
         $indent = str_repeat("\t", $depth);
         $output .= "\n$indent<ul class=\"$args->submenu_class\">\n";
     }

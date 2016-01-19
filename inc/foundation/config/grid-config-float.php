@@ -2,6 +2,8 @@
 /**
  * Float Grid configuration for Genesis Markup
  *
+ * @since  0.1.0
+ *
  * @package  GenFound/Foundation/Markup
  * @author  Joey Red
  * @license GPL-2.0+
