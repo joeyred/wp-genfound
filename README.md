@@ -2,9 +2,11 @@
 
 Foundation for Sites 6 and the Genesis Framwork brought together in an easy to use starter theme.
 
-**Current Version:** 0.1.0
+**Current Version:** 0.1.1
 
 This starter theme is still a work in progress and has some major features left to be added as of yet. This also means that a lot of this theme's structure and files are liable to change a lot before version 1.0.0 is reached.
+
+The goal of this theme is to not only merge the Foundation and Genesis frameworks, but to keep the Foundation components and plugins as modular as possible so as to allow including only the components from Foundation you require.
 
 ## Features
 
@@ -16,7 +18,13 @@ This starter theme is still a work in progress and has some major features left 
 
 ## Installation
 
-This theme currently uses Gulp and Bower. 
+This theme uses a gulp.js and Bower workflow and requires Node.js and Node Package Manager be installed on your computer.
+
+Open up terminal at the theme directory and run 
+
+```bash
+npm install
+```
 
 ## Gulp
 
@@ -25,6 +33,8 @@ The default gulp task builds all necessary files, starts Browsersync, and starts
 **Note:** *This file is currently incomplete and set up for development only. This will be updated as the theme gets closer to version 1.0.0* 
 
 ## Bower
+
+Currently Bower is not included in the gulp pipeline. To update simply use Bower as normal.
 
 ## Flex Grid Support
 
@@ -59,7 +69,7 @@ Again, you are only suppose to include one grid here.
 
 #### 3. Use correct configuration file
 
-The configuration files are explained in more detail further down, but all you have to do now if you want to change some of the classes in teh Genesis markup, use the `grid-config-flex.php` file located in `/inc/foundation/config/`. 
+The configuration files are explained in more detail further down, but all you have to do now if you want to change some of the classes in the Genesis markup, use the `grid-config-flex.php` file located in `/inc/foundation/config/`. 
 
 ## Enqueueing Scripts & Stylesheets with `genfound_enqueue()`
 
@@ -67,7 +77,7 @@ This theme includes a special enqueueing function, `genfound_enqueue()` that can
 
 This function should be used in the exact same way you would use either of the core WordPress functions, the difference is that there is no need to call `get_stylesheet_directory_uri()` when passing a value for `$src`. Only a relative filepath is required.
 
-By passing a file with that is not minified through `$src`, this function will then check if a minified version exists. If it, in fact, does exist, then the minified file will be enqueue instead of the originally defined file. If there is no minified version, then everything just continues on.
+By passing a file that is not minified through `$src`, this function will then check if a minified version exists. If it, in fact, does exist, then the minified file will be enqueue instead of the originally defined file. If there is no minified version, then everything just continues on.
 
 If a minifed file is passed, such as `app.min.js` then all previous functionality is overridden and the function operates in the normal manner that the core WordPress functions would operate.
 
