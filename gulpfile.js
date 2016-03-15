@@ -75,6 +75,15 @@ gulp.task('clean', function() {
 	del(['css/app*.css*', 'js/app*.js*']);
 });
 
+/* Bower */
+gulp.task('bowerUpdate', function() {
+    return plugin.bower({ cmd: 'update' });
+});
+
+gulp.task('bowerInstall', function() {
+    return plugin.bower();
+});
+
 /* Compile SCSS */
 gulp.task('compileSass', function() {
 	return gulp.src('assets/scss/app.scss')
@@ -113,14 +122,30 @@ gulp.task('watch', ['browserSync'], function() {
 	gulp.watch('assets/js/**/*.js', ['concatScripts']).on('change', browserSync.reload); 
 });
 
+/*
+ * PIPELINES
+ */
+
+/* Build Task */
+gulp.task('build', function(cb) {
+    sequence(
+        'bowerInstall',
+        'compileSass',
+        'concatScripts',
+        cb
+    );
+}); 
+
+/* Development Task */
 gulp.task('dev', function(cb) {
 	sequence(
 		'clean',
+        'bowerUpdate',
 		'compileSass',
 		'concatScripts',
 		cb
 	);
-})
+});
 
 gulp.task('default', function(){
 	gulp.start( 'watch', ['dev'] );
