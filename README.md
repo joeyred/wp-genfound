@@ -25,6 +25,21 @@ Open up terminal at the theme directory and run
 ```bash
 npm install
 ```
+After that, you can either run 
+
+```bash
+bower install
+```
+
+or you can run the guild build task which will take care of it while building out your initial CSS and JS.
+
+The task is called `build` so just run the command like so
+
+```bash
+gulp build
+```
+
+That should be the only time you need to run this task as the development task used in the default task will take care of updating with bower, cleaning old compiled files and sourcemaps, outputting new ones, and starting up the watch task.
 
 ## Gulp
 
@@ -34,7 +49,7 @@ The default gulp task builds all necessary files, starts Browsersync, and starts
 
 ## Bower
 
-Currently Bower is not included in the gulp pipeline. To update simply use Bower as normal.
+Bower is used to manage Foundation, jQuery, and the Motion UI library. Running the default Gulp task will update dependancies managed by Bower.
 
 ## Flex Grid Support
 
